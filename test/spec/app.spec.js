@@ -3,7 +3,7 @@
 
 describe("Trivia", function() {
 
-  it("should...", function() {  
+  it("", function() {  
     
   });    
  
