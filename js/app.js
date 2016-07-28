@@ -7,6 +7,7 @@ var TriviaModel = {
    /* Collection of available questions */
    collection : questions, 
    currentQuestion:-1,
+    question:0,
    /* Start the iteration over the collection of questions.
       It sets the first element as the current question */    
    reset : function() {
@@ -75,6 +76,8 @@ $(document).ready(function(){
         if (result)
         {
             alert("correct!");
+            TriviaModel.question = TriviaModel.question+1;
+            $("#monsterCatched").text(TriviaModel.question);
             if( TriviaModel.next())
             {
                 $("#question").text(TriviaModel.getCurrentQuestion().question);
