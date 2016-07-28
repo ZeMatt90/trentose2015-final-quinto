@@ -9,7 +9,11 @@ var TriviaModel = {
    currentQuestion:-1,
    /* Start the iteration over the collection of questions.
       It sets the first element as the current question */    
-   init : function() {
+   reset : function() {
+       this.currentQuestion=-1;
+   },
+    
+    init : function() {
        this.currentQuestion=0;
        $("#question").text(this.collection[0].question);
    },
@@ -47,7 +51,7 @@ var TriviaModel = {
               false if not
     */
    isAnswerCorrect : function (answer){
-       if(this.collection[this.currentQuestion].answer==answer)
+       if(this.collection[this.currentQuestion].answer.toLowerCase()==answer.toLowerCase())
        {
            return true;
        }
@@ -85,12 +89,6 @@ $(document).ready(function(){
             alert("incorrect!");
         }
         
-           
-        
-        
-        //var language = ParlaModel.detectLanguage(testo);
-        
-        //$("#question").text(language);
         
        
     });
